@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
     // open connection, passing user and password
     ok = db.open(argv[1], argv[2]);
 
-    // if connected, perfoem query on people table and display results
-    if (ok)
+    
+    if (ok) // perform query on people table and display results
     {
         QSqlQuery query;
         QVariant value;
@@ -59,9 +59,8 @@ int main(int argc, char *argv[])
             std::cout << value.toInt() << std::endl;
         }
     }
-    else
+    else // display error message
     {
-        // display error message
         std::cout << db.lastError().text().toStdString() << std::endl;
     }
 
